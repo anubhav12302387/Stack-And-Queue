@@ -322,3 +322,92 @@
 //     return 0;
 // }
 
+// Priority Queue
+
+
+#include <iostream>
+using namespace std;
+
+#define MAX 10
+
+struct PriorityQueue {
+    int data;
+    int priority;
+};
+
+PriorityQueue queue[MAX];
+int front = -1, rear = -1;
+
+bool isEmpty() {
+    return front == -1;
+}
+
+bool isFull() {
+    return rear == MAX - 1;
+}
+
+void enqueue(int value, int priority) {
+    if (isFull()) {
+        cout << "Queue Overflow!" << endl;
+        return;
+    }
+
+    if (front == -1) {
+        front = 0;
+        rear = 0;
+        queue[rear].data = value;
+        queue[rear].priority = priority;
+    } else {
+        int i;
+        for (i = rear; i >= front && queue[i].priority > priority; i--) {
+            queue[i + 1] = queue[i];
+        }
+
+        queue[i + 1].data = value;
+        queue[i + 1].priority = priority;
+        rear++;
+    }
+}
+
+void dequeue() {
+    if (isEmpty()) {
+        cout << "Queue Underflow!" << endl;
+        return;
+    }
+
+    cout << "Dequeued element: " << queue[front].data << " with priority " << queue[front].priority << endl;
+    front++;
+
+    if (front > rear) {
+        front = rear = -1;
+    }
+}
+
+void display() {
+    if (isEmpty()) {
+        cout << "Queue is empty!" << endl;
+        return;
+    }
+
+    cout << "Priority Queue elements: " << endl;
+    for (int i = front; i <= rear; i++) {
+        cout << "Value: " << queue[i].data << ", Priority: " << queue[i].priority << endl;
+    }
+}
+
+int main() {
+    enqueue(10, 3);
+    enqueue(30, 1);
+    enqueue(20, 2);
+    enqueue(40, 0);
+
+    display();
+
+    dequeue();
+    display();
+
+    enqueue(50, 2);
+    display();
+
+    return 0;
+}
