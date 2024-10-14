@@ -8,10 +8,12 @@ int moveDisks(int n, char source, char auxillary, char destinations) {
     if(n==1){
         cout<<"Move disk 1 from rod"<<source<<" to rod"<<destinations<<endl;
         return 1;
-    }1
+    }
     int moves = moveDisks(n - 1, source, destinations, auxillary);
     cout<<"move disk "<< n <<" from rod "<<source<<" to rod "<<destinations<<endl;
     moves = moves + 1;
+    moves = moves + (n - 1, auxillary, source, destinations);
+    return moves;
 }
 
 
