@@ -1,30 +1,23 @@
 #include<iostream>
 using namespace std;
-//1 source
-//2 auxillary
-//3 destination
 
-int moveDisks(int n, char source, char auxillary, char destinations) {
-    if(n==1){
-        cout<<"Move disk 1 from rod"<<source<<" to rod"<<destinations<<endl;
+int moveDisks(int n, char source, char auxiliary, char destination) {
+    if (n == 1) {
+        cout << "move disk 1 from rod " << source << " to rod " << destination << endl;
         return 1;
     }
-    int moves = moveDisks(n - 1, source, destinations, auxillary);
-    cout<<"move disk "<< n <<" from rod "<<source<<" to rod "<<destinations<<endl;
-    moves = moves + 1;
-    moves = moves + (n - 1, auxillary, source, destinations);
+    int moves = moveDisks(n - 1, source, destination, auxiliary);
+    cout << "move disk " << n << " from rod " << source << " to rod " << destination << endl;
+    moves += 1;
+    moves += moveDisks(n - 1, auxiliary, source, destination);
     return moves;
 }
 
-
-
-
-int main(){
+int main() {
     int n;
     cin >> n;
 
     int totalMoves = moveDisks(n, '1', '2', '3');
-
     cout << totalMoves << endl;
 
     return 0;
