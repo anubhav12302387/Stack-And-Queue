@@ -12,7 +12,7 @@
 // };
 
 
-// class BinaryTree {
+// class BinaryTree { 
 // public:
 //     Node* root;
 
@@ -115,11 +115,11 @@
 // static question
 
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
 
-int main(){
+// int main(){
     
-    return 0;
-}
+//     return 0;
+// }
