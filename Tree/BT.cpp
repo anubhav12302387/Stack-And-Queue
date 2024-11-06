@@ -1,125 +1,112 @@
-// #include <iostream>
+#include <iostream>
 
-// using namespace std;
-
-
-// struct Node {
-//     int data;
-//     Node* left;
-//     Node* right;
-
-//     Node(int val) : data(val), left(nullptr), right(nullptr) {}
-// };
+using namespace std;
 
 
-// class BinaryTree { 
-// public:
-//     Node* root;
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
 
-//     BinaryTree() : root(nullptr) {}
-
-
-//     void insert(int val) {
-//         root = insertRec(root, val);
-//     }
+    Node(int val) : data(val), left(nullptr), right(nullptr) {}
+};
 
 
-//     Node* insertRec(Node* node, int val) {
-//         if (node == nullptr) {
-//             return new Node(val);
-//         }
+class BinaryTree { 
+public:
+    Node* root;
 
-//         if (val < node->data) {
-//             node->left = insertRec(node->left, val);
-//         } else {
-//             node->right = insertRec(node->right, val);
-//         }
-//         return node;
-//     }
+    BinaryTree() : root(nullptr) {}
 
 
-//     void inOrder() {
-//         inOrderRec(root);
-//         cout << endl;
-//     }
+    void insert(int val) {
+        root = insertRec(root, val);
+    }
 
 
-//     void inOrderRec(Node* node) {
-//         if (node != nullptr) {
-//             inOrderRec(node->left);
-//             cout << node->data << " ";
-//             inOrderRec(node->right);
-//         }
-//     }
+    Node* insertRec(Node* node, int val) {
+        if (node == nullptr) {
+            return new Node(val);
+        }
+
+        if (val < node->data) {
+            node->left = insertRec(node->left, val);
+        } else {
+            node->right = insertRec(node->right, val);
+        }
+        return node;
+    }
 
 
-//     void preOrder() {
-//         preOrderRec(root);
-//         cout << endl;
-//     }
+    void inOrder() {
+        inOrderRec(root);
+        cout << endl;
+    }
 
 
-//     void preOrderRec(Node* node) {
-//         if (node != nullptr) {
-//             cout << node->data << " ";
-//             preOrderRec(node->left);
-//             preOrderRec(node->right);
-//         }
-//     }
+    void inOrderRec(Node* node) {
+        if (node != nullptr) {
+            inOrderRec(node->left);
+            cout << node->data << " ";
+            inOrderRec(node->right);
+        }
+    }
 
 
-//     void postOrder() {
-//         postOrderRec(root);
-//         cout << endl;
-//     }
+    void preOrder() {
+        preOrderRec(root);
+        cout << endl;
+    }
 
 
-//     void postOrderRec(Node* node) {
-//         if (node != nullptr) {
-//             postOrderRec(node->left);
-//             postOrderRec(node->right);
-//             cout << node->data << " ";
-//         }
-//     }
-// };
+    void preOrderRec(Node* node) {
+        if (node != nullptr) {
+            cout << node->data << " ";
+            preOrderRec(node->left);
+            preOrderRec(node->right);
+        }
+    }
 
 
-// int main() {
-//     BinaryTree tree;
+    void postOrder() {
+        postOrderRec(root);
+        cout << endl;
+    }
+
+
+    void postOrderRec(Node* node) {
+        if (node != nullptr) {
+            postOrderRec(node->left);
+            postOrderRec(node->right);
+            cout << node->data << " ";
+        }
+    }
+};
+
+
+int main() {
+    BinaryTree tree;
 
   
-//     tree.insert(5);
-//     tree.insert(3);
-//     tree.insert(8);
-//     tree.insert(1);
-//     tree.insert(4);
-//     tree.insert(7);
-//     tree.insert(9);
+    tree.insert(5);
+    tree.insert(3);
+    tree.insert(8);
+    tree.insert(1);
+    tree.insert(4);
+    tree.insert(7);
+    tree.insert(9);
 
 
-//     cout << "In-Order Traversal: ";
-//     tree.inOrder();
+    cout << "In-Order Traversal: ";
+    tree.inOrder();
 
-//     cout << "Pre-Order Traversal: ";
-//     tree.preOrder();
+    cout << "Pre-Order Traversal: ";
+    tree.preOrder();
 
-//     cout << "Post-Order Traversal: ";
-//     tree.postOrder();
+    cout << "Post-Order Traversal: ";
+    tree.postOrder();
 
-//     return 0;
-// }
-
-
+    return 0;
+}
 
 
-// static question
-
-
-// #include<iostream>
-// using namespace std;
-
-
-// int main(){
-    
-//     return 0;
-// }
