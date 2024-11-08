@@ -52,10 +52,17 @@ void printheap(int heap[], int size) {
 }
 
 int main() {
-    int heap[] = {3, 5, 9, 6, 8, 20, 10, 12, 18, 9};
-    int size = sizeof(heap) / sizeof(heap[0]);
+    int size;
+    cout << "Enter the number of elements in the heap: ";
+    cin >> size;
 
-   
+    int heap[size];
+    cout << "Enter the elements of the heap: ";
+    for (int i = 0; i < size; ++i) {
+        cin >> heap[i];
+    }
+
+    
     deleteroot(heap, size);
 
     
