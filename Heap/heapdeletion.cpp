@@ -43,18 +43,23 @@ void deleteroot(int heap[], int &size) {
     minheapify(heap, size, 0);
 }
 
-int main() {
-    int heap[] = {3, 5, 9, 6, 8, 20, 10, 12, 18, 9};
-    int size = sizeof(heap) / sizeof(heap[0]);
-
-    // Delete the root element
-    deleteroot(heap, size);
-
-    cout << "Heap after deleting root: ";
+void printheap(int heap[], int size) {
+    cout << "Heap Elements after deleting root: ";
     for (int i = 0; i < size; ++i) {
         cout << heap[i] << " ";
     }
     cout << endl;
+}
+
+int main() {
+    int heap[] = {3, 5, 9, 6, 8, 20, 10, 12, 18, 9};
+    int size = sizeof(heap) / sizeof(heap[0]);
+
+   
+    deleteroot(heap, size);
+
+    
+    printheap(heap, size);
 
     return 0;
 }
