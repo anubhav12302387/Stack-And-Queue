@@ -1,7 +1,7 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
+class Person
 int main(){
     
     return 0;
